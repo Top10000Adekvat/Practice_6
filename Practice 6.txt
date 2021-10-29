@@ -1,0 +1,27 @@
+1)-------------------------------------------
+def nested_sum(t):
+    j = 0
+    summ=0
+    for i in range(3):
+       summ+=sum(t[i])
+    return(summ)
+t = [[0 for n in range(3)] for nn in range(3)]
+for i in range(3):
+    t[i] = [int(el) for el in input().split()]
+summ = nested_sum(t)
+print(summ)
+2)-------------------------------------------
+3)-------------------------------------------
+def middle(t):
+    t1 = []
+    l = 1
+    for i in range (len(t)-1):
+        t1[i] = t[l]
+        l+=1
+    return(t1)
+t = [1, 2, 3, 4, 5, 6]
+print(middle(t))
+4)
+5)
+6)
+7)-------------------------------------------
