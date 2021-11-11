@@ -11,17 +11,59 @@ for i in range(3):
 summ = nested_sum(t)
 print(summ)
 2)-------------------------------------------
+def cumsum(t):
+    t = list(t)
+    answ = []
+    for i in range(len(t)):
+        sum = 0
+        for j in range(i+1):
+            sum += t[j]
+        answ.append(sum)
+    return answ
+n = [int(el) for el in input().split()]
+print(cumsum(n))
+
 3)-------------------------------------------
 def middle(t):
-    t1 = []
-    l = 1
-    for i in range (len(t)-1):
-        t1[i] = t[l]
-        l+=1
-    return(t1)
-t = [1, 2, 3, 4, 5, 6]
-print(middle(t))
-4)
-5)
-6)
+    a = []
+    for i in range(1, len(t)-1):
+        a.append(t[i])
+    return a
+n = [int(i) for i in input().split()]
+print(middle(n))
+4)-------------------------------------------
+def chop(t):
+    del t[0]
+    del t[len(t)-1]
+    #return t
+n = [int(i) for i in input().split()]
+print(chop(n))
+5)-------------------------------------------
+def is_sorted(t):
+    return all(t[i] <= t[i+1] for i in range(len(t)-1))
+n = [int(i) for i in input().split()]
+print(is_sorted(n))
+6)-------------------------------------------
+def is_anagram(word1, word2):
+    word1 = sorted(list(word1))
+    word2 = sorted(list(word2))
+    if word1 == word2:
+        return True
+    else:
+        return False
+
+w1 = input()
+w2 = input()
+
+print(is_anagram(w1,w2))
 7)-------------------------------------------
+def has_duplicates(s):
+    s = sorted(list(s))
+    flag = False
+    for i in range(len(s)-1):
+        if s[i] == s[i+1]:
+            flag = True
+    return flag
+
+n = input()
+print(has_duplicates(n))
